@@ -40,7 +40,7 @@ if illustrator_libs_path not in sys.path:
     sys.path.append(illustrator_libs_path)
 
 
-from win32com.client import GetActiveObject
+from win32com.client import GetActiveObject, Dispatch
 
 
 
@@ -58,7 +58,7 @@ def open_illustrator(path):
         raise Exception("Error when opening illustrator")
 
 
-global mod_illustrator
+global mod_illustrator, mod_layer
 
 module = GetParams("module")
 
@@ -191,9 +191,11 @@ if module == "select_layer":
         
 
 
-        layer = mod_illustrator.ActiveDocument.Layers.Item(layer_name)
-        layer.SetColor(0)
-        
+        mod_layer = mod_illustrator.ActiveDocument.Layers.Item(layer_name)
+        mod_layer.Visible = True
+        mod_layer.Locked = False
+
+        mod_illustrator.ActiveDocument.ActiveLayer = mod_layer
 
 
 
@@ -202,6 +204,70 @@ if module == "select_layer":
         PrintException()
         raise e
 
+if module == "select_art_layer":
+    layer_name = GetParams("layer_name")
+
+    try:
+        if not layer_name:
+            raise Exception("Layer name is required")
+        
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+        
+        mod_layer = mod_illustrator.ActiveDocument.Layers.Item(layer_name)
+        mod_layer.Visible = True
+        mod_layer.Locked = False
+
+        mod_layer.HasSelectedArtwork = True
+        
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
+    
+if module == "change_layer_color_cmyk":
+    c = int(GetParams("cyan")) if GetParams("cyan") else 0
+    m = int(GetParams("magenta")) if GetParams("magenta") else 0
+    y = int(GetParams("yellow")) if GetParams("yellow") else 0
+    k = int(GetParams("black")) if GetParams("black") else 0
+
+    try:
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+
+        # color_rgb = Dispatch("Illustrator.RGBColor")
+        # red, green, blue = cmyk_to_rgb(c, m, y, k)
+
+        # color_rgb.Red = 0
+        # color_rgb.Green = 0
+        # color_rgb.Blue = 0
+
+        color_cmyk = Dispatch("Illustrator.CMYKColor")
+        color_cmyk.Cyan = c
+        color_cmyk.Magenta = m
+        color_cmyk.Yellow = y
+        color_cmyk.Black = k
+
+        mod_illustrator.ActiveDocument.PathItems[0].Filled = False
+        mod_illustrator.ActiveDocument.PathItems[0].FillOverprint = False
+        mod_illustrator.ActiveDocument.PathItems[0].FillColor = color_cmyk
+        # mod_illustrator.ActiveDocument.PathItems[0].Duplicate()
+
+        # mod_illustrator.ActiveDocument.PathItems[0].Stroked = True
+
+        # print(mod_layer.Name)
+
+        # mod_layer.Color = color_rgb
+
+
+
+
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
 
 
 if module == "save_as":
@@ -233,6 +299,23 @@ if module == "close":
         
     except Exception as e:
         SetVar(result, False)
+        traceback.print_exc()
+        PrintException()
+        raise e
+
+if module == "execute_js":
+    file_path = GetParams("file")
+
+    try:
+        if not file_path:
+            raise Exception("File path is required")
+        
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+
+        mod_illustrator.DoJavaScriptFile(file_path)
+
+    except Exception as e:
         traceback.print_exc()
         PrintException()
         raise e
