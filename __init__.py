@@ -225,7 +225,61 @@ if module == "select_art_layer":
         traceback.print_exc()
         PrintException()
         raise e
-    
+
+if module == "select_artboard":
+    artboard_name = GetParams("artboard_name")
+
+    try:
+        if not artboard_name:
+            raise Exception("Artboard name is required")
+
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+
+
+        num_artboards = mod_illustrator.ActiveDocument.Artboards.Count
+
+        for i in range(num_artboards):
+            artboard = mod_illustrator.ActiveDocument.Artboards.Item(i+1)
+            if artboard.Name == artboard_name:
+                mod_illustrator.ActiveDocument.Artboards.SetActiveArtboardIndex(i)
+                print(artboard.ArtboardRect)
+                break
+        
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
+
+if module == "fit_artboard":
+    artboard_name = GetParams("artboard_name") if GetParams("artboard_name") else None
+
+    try:
+
+
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+
+        if artboard_name:
+            num_artboards = mod_illustrator.ActiveDocument.Artboards.Count
+
+            for i in range(num_artboards):
+                artboard = mod_illustrator.ActiveDocument.Artboards.Item(i+1)
+                if artboard.Name == artboard_name:
+                    print(artboard.Name)
+                    mod_illustrator.ActiveDocument.Artboards.SetActiveArtboardIndex(i)
+                    mod_illustrator.ActiveDocument.FitArtboardToSelectedArt(i)
+                    break
+        else:
+            mod_illustrator.ActiveDocument.FitArtboardToSelectedArt(0)
+
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
+
 if module == "change_layer_color_cmyk":
     c = int(GetParams("cyan")) if GetParams("cyan") else 0
     m = int(GetParams("magenta")) if GetParams("magenta") else 0
@@ -314,6 +368,75 @@ if module == "execute_js":
             raise Exception("Illustrator is not open")
 
         mod_illustrator.DoJavaScriptFile(file_path)
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
+
+if module == "set_layer_visibility":
+    layer_name = GetParams("layer_name")
+    visibility = eval(GetParams("visibility"))
+
+    try:
+        if not layer_name:
+            raise Exception("Layer name is required")
+        
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+        
+        mod_layer = mod_illustrator.ActiveDocument.Layers.Item(layer_name)
+        mod_layer.Visible = visibility
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
+
+if module == "add_artboard":
+    artboard_name = GetParams("artboard_name")
+    artboard_width = float(GetParams("artboard_width")) if GetParams("artboard_width") else 100
+    artboard_height = float(GetParams("artboard_height")) if GetParams("artboard_height") else 100
+    artboard_x = float(GetParams("artboard_x")) if GetParams("artboard_x") else 0
+    artboard_y = float(GetParams("artboard_y")) if GetParams("artboard_y") else 0
+
+    try:
+        if not artboard_name:
+            raise Exception("Artboard name is required")
+        
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+        
+        mod_illustrator.ActiveDocument.Artboards.Add((-2176.8843786280286, 1152.2283355584468, 2233.9742661277014, -1210.3046004526568))
+        mod_illustrator.ActiveDocument.Artboards.Item(mod_illustrator.ActiveDocument.Artboards.Count).Name = artboard_name
+
+    except Exception as e:
+        traceback.print_exc()
+        PrintException()
+        raise e
+
+if module == "duplicate_artboard":
+    artboard_name = GetParams("artboard_name")
+    new_artboard_name = GetParams("new_artboard_name")
+
+    try:
+        if not artboard_name:
+            raise Exception("Artboard name is required")
+        
+        if not new_artboard_name:
+            raise Exception("New artboard name is required")
+        
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+        
+        num_artboards = mod_illustrator.ActiveDocument.Artboards.Count
+
+        for i in range(num_artboards):
+            artboard = mod_illustrator.ActiveDocument.Artboards.Item(i+1)
+            if artboard.Name == artboard_name:
+                mod_illustrator.ActiveDocument.Artboards.Item(i+1).Duplicate()
+                mod_illustrator.ActiveDocument.Artboards.Item(mod_illustrator.ActiveDocument.Artboards.Count).Name = new_artboard_name
+                break
 
     except Exception as e:
         traceback.print_exc()
