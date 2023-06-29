@@ -7,7 +7,7 @@
         "pr": "Modulo para automatizar tarefas no Adobe Illustrator"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "linux": true,
@@ -390,6 +390,262 @@
         },
         {
             "es": {
+                "title": "Agregar mesa de trabajo",
+                "description": "Este comando permite agregar una mesa de trabajo al documento actual de Adobe Illustrator",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Add artboard",
+                "description": "This command allows you to add an artboard to the current Adobe Illustrator document",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Adicionar mesa de trabalho",
+                "description": "Este comando permite adicionar uma mesa de trabalho ao documento atual do Adobe Illustrator",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nombre de la mesa de trabajo",
+                            "en": "Artboard name",
+                            "pr": "Nome da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Nombre de la mesa de trabajo que desea agregar al documento actual de Adobe Illustrator",
+                            "en": "Name of the artboard you want to add to the current Adobe Illustrator document",
+                            "pr": "Nome da mesa de trabalho que você deseja adicionar ao documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "Mesa de trabajo 2",
+                            "en": "Artboard 2",
+                            "pr": "Mesa de trabalho 2"
+                        },
+                        "id": "artboard_name",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Largo de la mesa de trabajo",
+                            "en": "Artboard length",
+                            "pr": "Comprimento da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Largo de la mesa de trabajo que desea agregar al documento actual de Adobe Illustrator",
+                            "en": "Length of the artboard you want to add to the current Adobe Illustrator document",
+                            "pr": "Comprimento da mesa de trabalho que você deseja adicionar ao documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "100",
+                            "en": "100",
+                            "pr": "100"
+                        },
+                        "id": "artboard_length",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Ancho de la mesa de trabajo",
+                            "en": "Artboard width",
+                            "pr": "Largura da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Ancho de la mesa de trabajo que desea agregar al documento actual de Adobe Illustrator",
+                            "en": "Width of the artboard you want to add to the current Adobe Illustrator document",
+                            "pr": "Largura da mesa de trabalho que você deseja adicionar ao documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "100",
+                            "en": "100",
+                            "pr": "100"
+                        },
+                        "id": "artboard_width",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Posicion X de la mesa de trabajo",
+                            "en": "Artboard X position",
+                            "pr": "Posição X da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Posicion X de la mesa de trabajo que desea agregar al documento actual de Adobe Illustrator",
+                            "en": "X position of the artboard you want to add to the current Adobe Illustrator document",
+                            "pr": "Posição X da mesa de trabalho que você deseja adicionar ao documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "0",
+                            "en": "0",
+                            "pr": "0"
+                        },
+                        "id": "artboard_x",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Posicion Y de la mesa de trabajo",
+                            "en": "Artboard Y position",
+                            "pr": "Posição Y da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Posicion Y de la mesa de trabajo que desea agregar al documento actual de Adobe Illustrator",
+                            "en": "Y position of the artboard you want to add to the current Adobe Illustrator document",
+                            "pr": "Posição Y da mesa de trabalho que você deseja adicionar ao documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "0",
+                            "en": "0",
+                            "pr": "0"
+                        },
+                        "id": "artboard_y",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "add_artboard",
+            "module_name": "AdobeIllustrator",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Seleccionar mesa de trabajo",
+                "description": "Este comando permite seleccionar una mesa de trabajo del documento actual de Adobe Illustrator",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Select artboard",
+                "description": "This command allows you to select an artboard from the current Adobe Illustrator document",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Selecionar mesa de trabalho",
+                "description": "Este comando permite selecionar uma mesa de trabalho do documento atual do Adobe Illustrator",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nombre de la mesa de trabajo",
+                            "en": "Artboard name",
+                            "pr": "Nome da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Nombre de la mesa de trabajo que desea seleccionar del documento actual de Adobe Illustrator",
+                            "en": "Name of the artboard you want to select from the current Adobe Illustrator document",
+                            "pr": "Nome da mesa de trabalho que você deseja selecionar do documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "Mesa de trabajo 1",
+                            "en": "Artboard 1",
+                            "pr": "Mesa de trabalho 1"
+                        },
+                        "id": "artboard_name",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADACAYAAABBCyzzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAGaRJREFUeNrsnQlwFdeVhk/3W7WAdqENbQiEhMSOhFiMLYPBmNgeu8aVsV2xEyeTTM3ENTXOYqfKqclWM4knk5opTyp2EtsZx0ll8RJjx4MXwGB2EDIgNhkJtCMkIaH9vdfdc867/UCAAKm7Jb3l/FUtEEhvue9+9/zn3tvnSl6fF5578xfQ0tkONpsNrJcEYJdBtcn+72xDXsl2aSDF3tU3W+7qK5B6+vOknsE00LRk/G83XvSDGrAiVQqocElz289DQmyjlhhbpyTE1HrjY86qse5BxW4DSVVB8qn+PydCQ94h+Or6R2BRfgnYVXyS7ScPws7mMxBnd1r3LLIMfQ4bRCkqJHb1JsU2dq6wn22v1JovLfN5tNlIQBJeNu4PrFsMr6QBmwTNcoLjCGQnfzKYm7r1UlpCTWeMS3Fh/3V4VUvH1Lahfri/bL3/73b64ra5IMnugiiHeUAUjBZejETTLw1E5dc03mU7du5R5Xz/nQpAQuANu/hzZ41P0dj/Z6td3tnQ1fpgbHWrNt0hH8spTHu9f37O7y5mJtV6kSCXRwFJMw9Kn6Lg+C5fAcQKaWihhjH8JV3oSZpWVf8l9Ujj13yKlq/onknmD5ll1pSMCCyqVy31HWspdR5r+U5mavR73vI5/9k+J3OHgq7F4fUiKJIlz2kaEE2SYNBlh4Tu/pj0XSf/STna/C8eDVIZCtYkAeP0tA/cB5ur78tIOPm+b03xd1sLM/fZVA1sPmVqAaGEiZS7/7P7YfuJ//Ao2iwGgzVVkcV7cegueKtqbXZ23Su96xY805kS1+7y+EzZLsN9ecjlgGkX+5Kzfvvxa76Pjr+p6nCwWFMJCl6yp6H7S9Ev7aieub/2QRrENZs8eYCQpSI4MmsaVsW89PGB4dbehxkMVrCBomlaurL1xJ9n/nnP87Zhr8vnsE88IIosgReToJyPa76iba7eqqlaLsPBCmZQhus6/jHl5W0fxHf0pHuc9okDRKFpL7xy3jn4Pe+eMy/idw7+CFihAIm3z7s6+jc7dyQ3dc4l92M5IBQ5AK+st/c/N1zT+l2OGqxQg8SnaAWu3+95f8a59pLxQHLLvk45ByU5me8e/NHwqfZvMBysUIVEUbWZzj/se2dGU+ecsdqtW/b3YXygrG3HnvQcb/sOw8EKA0hyXH/c83pcV2+qz2EzBwiFoqzD9Rs9B87+jOFghY3d8qgl09/Y+7LT47UpsmwMEKIrubUrV3r/6K9kXvtjhVvi3jm0MfX9T3/gdRgAhJJyu1eBmM0Hn1c0SOcmZYUjJJg2PJ11rGHdzZJ2+UZ5x4y9p77m7Rq6h0MHK4wlyVuO/iyup3/ajVbbr/tXWppPbuvOUvfW/SvDwQr7fMSrzovfeeLbw3bbGAFBezV9R83TaK1mcBOyIgES5VjLkylNHYWjzWrJ1ybmKQ0dxb4znV/k6MGKFKkA02J3n3xKlaSbA0I/EL331NdVuoOLxYqgKOKt63okuamzULnGal0GhDYhJrZ1Z3vruz7P0YMVgVEkOrrqzJf926quB0SFIcziY2saHsIfjOfmYkVkLnKq/aHpF/vitBGQ+AFR8R/iB4Yl7WjT57mpWJEqRdWyp9e2bRgckazrxarsEN/Stdg7rCxhe8WK6EhysukBSVGvjyDuz9ru4uZhRbzNautdnd7TnyDpe7Rk2s5O20q0sx2V3ESsiLdZGqTHN3ctVu06IBLtu+odSFT7lFK2VywWgKO5s0LSazrKGoYSZ2dfgQK8cs5i+dXcsxQUJWC7JLBd6CniVmGxdJvVpxZKQ1775SRd7h6Yxc3CYgVKBkGaPOhJ0r9XQevpz+GmYbGENIA4aWA41Q+IPOwD6B5I42ZhsS4DItl6h0QE0TTNBoqays3CYo2ARFUTApaLkhE3NwmLdZXcAUBowpdPemKxrpYUAITFYt1ADAiLxYCwWAwIi8WAsFiTKTs3AWssoq17PrhyGrlNv2QGhBWpovvqhnQwqFBBlhNgWjTdmgrQOwjQ4QXohisLaTIDwooE0QLAgP73ymyAB24DWDoHISBKnHoY8SA8SMehWoA3dgJsPSd+L2pElGFAWGGpHrwWTAf4/hcAZi0FcdieT/dZgd7vEsCsLMBrLcCpfQBPvwJwBiPLtDCChJN01lUiy3R/IcBrP0I4KnQwBkTE8AOi6pei/9uA+JlCjDJvfg9gUSLaLz0KMSCssBJ17LtyAH74FP5lut75xxIK6Gf68MoAeBF/N90m2GFAWGEjChRp2Bt+8lU94zbSw9FeufIBnvk7kdxzDhKmUvTR1GppwrpDTBB6dAoAT23AHDxP/8aoMOrcjnZr0V8BjnWF/jZxBmSUkTQZLcKzm7Aj46erqtY9tgNbe+unAG8fD66OQwMC3RD0N6vwy7DJB1PFCHDfSoCDmxmQsBNZgwU4im56GK5eGbOEEIBViwE+/hZAvxY8jU9MLMvE6JGmv2cLiFtRDBC1WfAiMyDhI78NcuikeC0GBB9TxqF65VyAv5wQ06HBEjULEBD/GsegNYCkJwEkSgA9WmgDwkn6KIC4CRBpAhIFejy0b5+rCK4chEb5+BirGxGdliP010MYkFE6S0rCBLYMRqXyUoBsuwhQwSKJP3oGZKzKTJ7oWQCA2xdY42as6gSXBiymjbai+EIfPAZklKSsIAMm3Bt8bnnwND695/rzes4lWdOrLnQBdKmh38EYkKvdD8zE3lKQBxPrf/Cxi4oA5kSbn1W1QpSb1zTgly6wpnwHtuHB02I5hQEJI9HEVXmRsECgTOAT0WPHA6xdGhw2iyJIM472O6t1Wsz2KGzIzbvNPxQDEmQiV1W5aJJaBTvkpnKxkKYGwXunibuX38Mv/SajCEbFIwcAdreEx1HJDMiI3DkdW2NVKUzO9BI+R1YBQElicGzso/s49nYAvLFZ/8ZILkL7aDCX+eGr4dOxGBBdZHVWzwNxSopvEp6QwkYswIZlwTObRQuX/4aAHP4QxIax8UQSCoUDAN/8b4Dj/YIxBiTMtLF8klsEQby7XOwsDwabFeDhy78G+Mtreq4UrScpo0UUSc9ZEHQVk/yv/xDgvTrxfviGqTASOaocNOFLS2By/Q4+cUIOPm9m8GwPd+g8PPMOwFeeAaj6CL+5pP9HlH5F63/S4RmNAH94GWDdswDbmwQc4STei6XbqzUL8AsVvB9vT5X0YcbIrJcmOto9ywG2vR48SS1FErr9/CDmJI+9BJCPcJTm4iCShq9Rn5q62AdwGuH4tBXgguYPIkGzt4wBmYAwek+ZgV/UV4z9UMUZ9EkYRdYuBkh5XTxMMFURD+QRLfga62vREdZe3WZ2PS+PD/O+EdGihbpZ2BOKi2D8s1fYQy62APx5Gxif9Mc8xIkWq2J28CTro9muWB2EwDVdd1rhfixAxANCnZJGcEgwYJOwd9QiIO/s0SOJkalRTYC2sSI4EnUWA3JZqm4RaCbJ0LQLAlFzFqAavbrvvAnDipHrtvkAmbbJmWFmMSBjEg36c9Er5M+G8c9e6flH1WlRR+rAaROAEBWpCEnplYJtLAZkykVJ8V3LQEy/jNffkPnuBDjZIqLQJ0fB3OS/LHb4TtX2cEnPx2hGt8/ERcUuwgnyiJ3F0msLwN3LwJj5x5Y7VgdwXhWPs/+k3ruMbq7CaDS/GGAW0tY8LBLjyc7FVmUAfO1e/znhhll3Ybt8VA3wy11i4GBAQlQ0Wi5KBkjLB2N7r3DI/aRGuCOazanrB2hpAMiYB8b2sNMEQaKYMPj5nsmfOvVH0wqA4nUmQ4ATc6ksgFd3ibYJ9VkuOZIBWV+mhxHVQKthJ9pXc6WqOY3Au2pM9ghNzGa5YGpmtORAOXczFzaEzculR0PeXtE8/l1Lwdi0EcbdTowWxzuvLH/QnzuO6OQZ7R1os/Ln4CgeP0U7fLWgehgGZCqT80UZYh+UIXuFgOw8KhLSQAPSqP8pQuNpNWFcVTFhQOAOAYsBmUJ75V/7cBsY7vTpnq2Hr148J2fVgddusllmMmyf2FUcC7xwyIBMgSgXpj2J6xYbjx7DLQDVDdfP0hAkHxzSbZtRm4WvKSUXYGFacNyvzoBEmCiZLssDiMoynn/sOi6ixbX5OG3u208b+tpNJOsU0aIxiixnQBiQKRAxQZ3v8lFi47VXGII+qhq9/1Pq0Yq+aP8JkzYLo8j6Jf5Z3wmtHcFiQK6DYwZ28soFBu0VUXFBbCu52S2lH1SZTCB8IsKV5wXvDl8GJEzt1YpCfNPpBu0VRoVDp0SUuNFEFYGzhxJ1MzWmNPFctCbCmxcZkEkT9btNy/WOqxl7ALJX2s0ZggaMTjWnzdusOxcCZMgMCQMySfaKtpNXlJiwVxcBdh+9dcUOclf+2Swzy8mUfKQBrCxmm8WATIJoe5G/rE+qcXt1uhbgrOfWgeHy7t5ukzZL3+GrcT9lQCZaUsBeycYf4MPDY9sCQoCcQSLr6kzaLI+otJLrCK6jEhiQMBN1rjwnwMJ5YGyTE7VSL8COT8d+5h6tYWyrssBmJYlyqGyzGJAJE3Wu2zHhNbywgCN4cz1Abe/YazMQSNsRKH+tW5OtfE85l59hQCb4TfqrJhqVTXT2wXE0GIF0CpP6C+fAXO/GiFdYhFcsr6wzIBMg6lSF0QBzC8HwjVG0tXbX0fFV9qGGpVtQPz5iEhB9b/66ZWyzGJAJsld0Dof/Fj0j9orOEmwDqGkZ/y2kBNS2wwIwU7mIKmxWFPAOXwbEQql6LnB3mYmehYDsO+WvzzDuGVsCqroZYKDZZBTByJeeD7AgmW0WA2KhaMKK7s7LLjBhr1Sxem4kAOhriyJZd5gkPQZB5x2+DIiV8hciIHtlpKxPoHU6RcUSt8HXQIHjwyowXnkxIB/AhqXGnSKLARlt0IX1y0z0KBz1j50GaPQZDwCUNxyqRz5azNusadkAS3M4ijAgFog60fxUgBlGy/ro2nLQXGKs75A3b7M0kdRQsu7hfsuAWAGIPzmPNmivqGd3A+w8Yv44MQoc/3fAAptFRyUsEve0sM1iQEzZK39ZnyVgfK84jvbHTwDUWVDl0G+zzuJLMVPxRM9DbBninhau4cuAmErOl2QhJNlgavbqT7vN16qli9ZizqJF2nbUJCCaiGybKniH72QpLLf4kJOhY80CJ68aAqRPjPwP5WEjWVA/cxBf1EAfmL/7CYGvKAWYia+pQ5n8Gr4MSIiLvHkyXncuMpGck0dzAnzrSYtjrALm960TYCkAaxYC/PYQA8IWa7wjNV7lswBcGRaM1qr+GFZdFvqiTeV8PBgDYnCA9Zf1cVjQIbUJuKwQRqGSYoCCKF4TYUDGCUc65g+3z4fwvgWPrFo8wLqlvMOXARmnvVpRhDl2GoT/QoEq6gsbPa+HFYGAkIOhlWbDZX1CSRghc2cDzEvglXUGZGz9xT/1udxoWZ8QjCBUAn5DGR+VwICM0V6tptzDaFmfEE26NiwzvlmZFUGA+Mv6lEP4nP01xrCZlAewJIOjCANyC3s1yylOiY0oQ055llvsGuA8hAG5qb26gw7EwYQ14ra5esXJuMnAO3wZkBuI9stsLIvQTxDzEFeW2D3AayIMyHWileQ5sQCzCyEyfYYmRohNK7gKPANyA3u1lu77iIPIncpBm7VmPkAWH5XAgIxUoKzPxjKI7HlOSj5miOr1bLOst+8hK3JUJYk4chot6xMQTQ27puhNaPob0Uw+Bh2VUAHwx6PcqRmQEfbKX9aHDhU3eg+qLDrob34H0NWLDTKJMdWDfigvA+CB+0d0dBOjxcISgHwnQIuH7xOJeEDIUdEKsr+sjxnjjT2ptRbg37eKQDKZnpNedlyVGPkdGSajINksjKaViwFe2CvqZ7EiGBCavVqWBpCSZ7Jj2a5UTpyKTtWNUWPrYQQ9B8zvIdPE/eqv7BUDCN9QFcFJOgFCG/X8N45rJt59P3bQqqlLQajA9Xv79TdkdpsMWqtZcwDmTueV9YgGRL9fCNYtNmmvMH52nAM41jF1gNDzHsDX0N8E5hMHvd4R2U7emxXBgNBguzRblOI0ZUvswt70TWFDBApc+0/FtVszelDBvBjgHb4RCwjZB/+JUS4T9orszKAoLO2a4vdDNmvLAfF6TNssryi3unAG368ekYCQvUqRTJb1AWFnehoAjrRNPSC02FnVggn7OYtsVrQYQNhmRSAggbI+DrNlfdDObPtUVE6Ug+BD6KUoYpXN8omyq0bPLGWFMCDExD0VekcyY69weP3w0PjOHZzoZH0LzWZZcCouRdYYzM/K8njrSUQBQnBk4CteU2o+Oadj0Q43Tb29GgnI0Q6AtjoLbJYmEptNy3nzYkQB4r/vnO4aNFvWxyHO66DZI1sQfRAUPOg8EktelAegcqGoE8aQRAggNDD6Z69kk/bKI6ZVnUH2/ihZ/+CgnpCY/WQUUR9sVTHbrIgAhBxVDlqjZSVgbpnYLo5DqzobPPYqIAL2eDdA42cW2SybsFl8VEIEAEKj4JoFYP7ma+x4O46IY9FsQfhh0NTsu/st+mQ8YkChgcXLfT28AaEXavq+c0mEIppODdZdmrS17COa7u2xxmbRgHLHIrZZYQ0IrQjPcomK5mZnr5RWgINnzJ87OFEi21eL2frpU2BZksRHJYQ5IDT63Uk3Rpkt64OA7KoBOK8Fn726xhnBX/eDNUXwcECZW4RXDG89CUtAAved31MG5rJNScBF06i2IH/PtNFwexV+6bIgUaIBJU7s8B0cSxuxrh1Tg1vkqPLRd+QV6zgbnXqiWSG0V/tOBa+9GvlS6zCMHDkJML8SzB9pi222vgLg59tvfiOVGmhfMwsnaAs1BwMyaaIB9BJSUr0PYGYKAmPAYkk4Msp4vbQFoEMTR6eHwvt+/g2A7yLNLuxwiom96/T7R07c3C4QFx8dAFgzD58bf1AzGK1dCMj7ewXTbgZkcl5gD3aOL/7K3ItV4PJG15AQvc5DbQCf+6llt4nctMPS8+1owFzv++afbzhM4AgJQAKjaRSYuwHIBqE1k6Ppo7pVNz05xvF8Zp/TBeGjkCraEIlTlTK3Mfc5FosBYbEYEBaLAWGxGBAWi8WAsFgMCIvFgLBYDAiLxYCwWAwIi8WAsFgMCIvFgLBYDAiLxWJAWCwGhMViQFisSQKE6xuzWDcAhApe8LHaLNbV8gYAob90c3uwWFep1w+I5rQDxLrbuD1YLCGqwKpFOztFBJFtIMXHNHGzsFiXNaDGuNsvJ+lqfHQ9twmLJWSjCrXRro7LgChJ005ys7BYenFvJ9Srbke/DohKgJySzNcQZ7HCQylRR/25uR8QRQVPQmyD3S7VcsuwWBgyZibvDhyWIlOde5/boUmZsbtUbhtWhAst1eBgZtJ+SRU0yJJ/DV0CZVb6Fm4eVqTnH7YY++HzKdPOBA5k8SfpsqJAT27qTpsktXAzsSJZ0py0zb1u5+UThPyASIoG3fExF+XchHfZZrEi2F4NDc6d+RbxMOLfRHBRMCfxzs/5LTcTK2LtVXLUh52ZiSejfMq1gMjg9ijQlZ+2wznN8TFHEVZEQrJ41guqTQabBtcCQpuyNBhyOcBXPvt5bipWpEUPR4x9b2dx5rsOr+J3U9cBQnJ5fNBVMvN1R6yDp3xZkQXJisLnBtwuTbrmeN+rAJH8UcSp+dYUfZ+bjBUx0SPRvaW9NOcNChCjJO5Xi0JMe3H2+87M6a9xFGGFuxCA4eHK+c96HTaQRjkc/jpAAj/Uu27BMzYJ+D4RVlhHD/u89OfaCtIOOEeJHqMCQrL5FOhMS2iUbi/8Z44irDBOzHd1VJb+wO1VbhZhRhf5sZZls//gLEj5L4aEFXbWSoKOwfuWfWUg2uUBVR0/IGS1bKoGFzYu+SYlMQwJK4yihyqtK3miLSflxI2s1S0B8UOiqDDstnsvPVjxqN0pVzMkrLCwVmV5TzYuzn87esg7liT+5rKjP+tJjO0YfHjlvQjJSYaEFcpwOBdlfftcZen/uG4ROcYMCInC0IW0+Ma+R1attzttRxgSVkjCsSTnG03rFv7E4fWNOqVrGBCSe9gH3alxDX1fWL3WOc25jSFhhRAcHsfKgica1s7/KaUNlFuPOZkfzxNRJLmUGHuh/fHb73blJf6CIWEFe9SQZKlJ3rRgff1txS/RIvh44Bg3IIGcRHE5hhv/dsU/OFYVPIb/1M2gsILSUiVFvdP/2OryppKc7ZSQj9VWmQKE5A9TPhXqVxf/7/CjKxY7k6M2MySsoIkaEnQ6l+f/fetjd9x7KWV6i3vYa/jxDB9/QDQSlRczkupbH6+811ZZ9IBsl08wKKypAgPldeUmvNj/+G2ldXeU/FKVQLPfZJV8TI7J7Auze32gIbKNZbPfjC3Kei+puv4R2Ff3lNenFpkikMUaIxh0q6wzK+5PQyvn/rglN7WG8oyxrHFMCiCBaEJhzBvlHDq3uvjXMYvyXk083rxRrq57QukauhPfRBTDwrI4WoBdlursc2f8fmBh3sttWclnMGKAc4zrG5MKyMjcxE2F6FxOT2NZwVv2xXlvJZ7vzo76rPVuqa5tg9I+WKZpWrqqV+ViYFjjAYJqVtlctlOO3IRt3oLMzT3ZKXt64qKH7CrlxF6wa5Llz22fiDdkoxc8rKL10qArPaHBk5X0QtTKohdiuvvjo9p7Sp0tXYuhvWeB1tk3Wx1UMjVVS8Bfi8HLwd2BecBrCLt6r+SQ2qVprnOOlLjjSnrCYc+M+KqLKXFn+mNd/sTC5VPgSgIuTciL+X8BBgBpzg11/OAtXQAAAABJRU5ErkJggg==",
+            "module": "select_artboard",
+            "module_name": "AdobeIllustrator",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Encajar en limites de ilustración",
+                "description": "Este comando permite encajar el contenido de la mesa de trabajo en los limites de la ilustración seleccionada. Debe seleccionarse previamente la capa de arte.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Fit to illustration boundaries",
+                "description": "This command allows you to fit the content of the artboard to the boundaries of the selected illustration. The art layer must be selected previously.",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Ajustar aos limites da ilustração",
+                "description": "Este comando permite ajustar o conteúdo da mesa de trabalho aos limites da ilustração selecionada. A camada de arte deve ser selecionada previamente.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nombre de la mesa de trabajo",
+                            "en": "Artboard name",
+                            "pr": "Nome da mesa de trabalho"
+                        },
+                        "description": {
+                            "es": "Nombre de la mesa de trabajo a la que se desea ajustar el contenido del documento actual de Adobe Illustrator.",
+                            "en": "Name of the artboard to which you want to fit the contents of the current Adobe Illustrator document.",
+                            "pr": "Nome da mesa de trabalho à qual você deseja ajustar o conteúdo do documento atual do Adobe Illustrator."
+                        },
+                        "placeholder": {
+                            "es": "Mesa de trabajo 1",
+                            "en": "Artboard 1",
+                            "pr": "Mesa de trabalho 1"
+                        },
+                        "help": {
+                            "es": "Si no se especifica un nombre de mesa de trabajo, se ajustará el contenido del documento al tamaño de la mesa de trabajo activa",
+                            "en": "If an artboard name is not specified, the content of the document will be adjusted to the size of the active artboard",
+                            "pr": "Se não for especificado um nome de mesa de trabalho, o conteúdo do documento será ajustado ao tamanho da mesa de trabalho ativa"
+                        },
+                        "id": "artboard_name",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "fit_artboard",
+            "module_name": "AdobeIllustrator",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
                 "title": "Eliminar capa",
                 "description": "Este comando permite eliminar una capa del documento actual de Adobe Illustrator",
                 "title_options": "Seleccione una opción",
@@ -492,6 +748,207 @@
             "video_youtube": "",
             "icon": "data:image/png;base64,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",
             "module": "select_layer",
+            "module_name": "AdobeIllustrator",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Asignar visibilidad de capa",
+                "description": "Este comando permite asignar la visibilidad de una capa del documento actual de Adobe Illustrator",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "en": {
+                "title": "Assign layer visibility",
+                "description": "This command allows you to assign the visibility of a layer of the current Adobe Illustrator document",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "pr": {
+                "title": "Atribuir visibilidade da camada",
+                "description": "Este comando permite atribuir a visibilidade de uma camada do documento atual do Adobe Illustrator",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nombre de capa",
+                            "en": "Layer name",
+                            "pr": "Nome da camada"
+                        },
+                        "description": {
+                            "es": "Nombre de la capa que desea setear la visibilidad del documento actual de Adobe Illustrator",
+                            "en": "Name of the layer you want to set the visibility of the current Adobe Illustrator document",
+                            "pr": "Nome da camada que deseja definir a visibilidade do documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "Capa 1",
+                            "en": "Layer 1",
+                            "pr": "Camada 1"
+                        },
+                        "id": "layer_name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Visibilidad",
+                            "en": "Visibility",
+                            "pr": "Visibilidade"
+                        },
+                        "description": {
+                            "es": "Visibilidad que desea asignar a la capa del documento actual de Adobe Illustrator",
+                            "en": "Visibility you want to assign to the layer of the current Adobe Illustrator document",
+                            "pr": "Visibilidade que deseja atribuir à camada do documento atual do Adobe Illustrator"
+                        },
+                        "options": [
+                            {
+                                "title": "Visible",
+                                "value": "True"
+                            },
+                            {
+                                "title": "Oculto",
+                                "value": "False"
+                            }
+                        ],
+                        "placeholder": {
+                            "es": "Visible",
+                            "en": "Visible",
+                            "pr": "Visible"
+                        },
+                        "id": "visibility",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "set_layer_visibility",
+            "module_name": "AdobeIllustrator",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "en": {
+                "title": "Select art layer",
+                "description": "This command allows you to select the art layer from the current Adobe Illustrator document",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "es": {
+                "title": "Seleccionar capa de arte",
+                "description": "Este comando permite seleccionar la capa de arte del documento actual de Adobe Illustrator",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Selecionar camada de arte",
+                "description": "Este comando permite selecionar a camada de arte do documento atual do Adobe Illustrator",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nombre de la capa",
+                            "en": "Layer name",
+                            "pr": "Nome da camada"
+                        },
+                        "description": {
+                            "es": "Nombre de la capa que se desea seleccionar del documento actual de Adobe Illustrator",
+                            "en": "Name of the layer you want to select from the current Adobe Illustrator document",
+                            "pr": "Nome da camada que você deseja selecionar do documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "Capa 1",
+                            "en": "Layer 1",
+                            "pr": "Camada 1"
+                        },
+                        "id": "layer_name",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "select_art_layer",
+            "module_name": "AdobeIllustrator",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "en": {
+                "title": "Execute JS Script",
+                "description": "This command allows you to execute a JavaScript script in the current Adobe Illustrator document",
+                "title_options": "Select Option",
+                "options": null
+            },
+            "es": {
+                "title": "Ejecutar Script JS",
+                "description": "Este comando permite ejecutar un script JavaScript en el documento actual de Adobe Illustrator",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Executar script JS",
+                "description": "Este comando permite executar um script JavaScript no documento atual do Adobe Illustrator",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "file_select",
+                        "title": {
+                            "es": "Archivo JS",
+                            "en": "JS File",
+                            "pr": "Arquivo JS"
+                        },
+                        "description": {
+                            "es": "Seleccione el archivo JS que desea ejecutar en el documento actual de Adobe Illustrator",
+                            "en": "Select the JS file you want to run in the current Adobe Illustrator document",
+                            "pr": "Selecione o arquivo JS que deseja executar no documento atual do Adobe Illustrator"
+                        },
+                        "placeholder": {
+                            "es": "C:/Users/User/Desktop/script.js",
+                            "en": "C:/Users/User/Desktop/script.js",
+                            "pr": "C:/Users/User/Desktop/script.js"
+                        },
+                        "id": "file",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "execute_js",
             "module_name": "AdobeIllustrator",
             "visible": true,
             "options": false,
