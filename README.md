@@ -23,16 +23,46 @@ This command allows you to open an AutoCAD file in Adobe Illustrator
 3. Change document color mode  
 This command allows you to change the color mode of the current Adobe Illustrator document
 
-4. Delete layer  
+4. Change CMYK color of layer  
+This command allows you to change the CMYK color of the selected layer in the current Adobe Illustrator document
+
+5. Add artboard  
+This command allows you to add an artboard to the current Adobe Illustrator document
+
+6. Select artboard  
+This command allows you to select an artboard from the current Adobe Illustrator document
+
+7. Duplicate artboard  
+This command allows you to duplicate an artboard from the current Adobe Illustrator document
+
+8. Fit to illustration boundaries  
+This command allows you to fit the content of the artboard to the boundaries of the selected illustration. The art layer must be selected previously.
+
+9. Delete layer  
 This command allows you to delete a layer from the current Adobe Illustrator document
 
-5. Select layer  
+10. Select layer  
 This command allows you to select a layer from the current Adobe Illustrator document
 
-6. Save .ai  
+11. Assign layer visibility  
+This command allows you to assign the visibility of a layer of the current Adobe Illustrator document
+
+12. Select art layer  
+This command allows you to select the art layer from the current Adobe Illustrator document
+
+13. Execute JS Script  
+This command allows you to execute a JavaScript script in the current Adobe Illustrator document
+
+14. Reflect tool  
+This command allows you to reflect the selected object in the current Adobe Illustrator document
+
+15. Save as EPS  
+This command allows you to save an Adobe Illustrator file in EPS format
+
+16. Save .ai  
 This command allows you to save an Adobe Illustrator file in .ai format
 
-7. Close Illustrator  
+17. Close Illustrator  
 This command allows you to close the Adobe Illustrator program  
 
 

@@ -23,16 +23,46 @@ Este comando permite abrir un archivo en formato AutoCAD en Adobe Illustrator
 3. Cambiar modo de color de documento  
 Este comando permite cambiar el modo de color del documento actual de Adobe Illustrator
 
-4. Eliminar capa  
+4. Cambiar color CMYK de capa  
+Este comando permite cambiar el color CMYK la capa seleccionada en el documento actual de Adobe Illustrator
+
+5. Agregar mesa de trabajo  
+Este comando permite agregar una mesa de trabajo al documento actual de Adobe Illustrator
+
+6. Seleccionar mesa de trabajo  
+Este comando permite seleccionar una mesa de trabajo del documento actual de Adobe Illustrator
+
+7. Duplicar mesa de trabajo  
+Este comando permite duplicar una mesa de trabajo del documento actual de Adobe Illustrator
+
+8. Encajar en limites de ilustración  
+Este comando permite encajar el contenido de la mesa de trabajo en los limites de la ilustración seleccionada. Debe seleccionarse previamente la capa de arte.
+
+9. Eliminar capa  
 Este comando permite eliminar una capa del documento actual de Adobe Illustrator
 
-5. Seleccionar capa  
+10. Seleccionar capa  
 Este comando permite seleccionar una capa del documento actual de Adobe Illustrator
 
-6. Guardar .ai  
+11. Asignar visibilidad de capa  
+Este comando permite asignar la visibilidad de una capa del documento actual de Adobe Illustrator
+
+12. Seleccionar capa de arte  
+Este comando permite seleccionar la capa de arte del documento actual de Adobe Illustrator
+
+13. Ejecutar Script JS  
+Este comando permite ejecutar un script JavaScript en el documento actual de Adobe Illustrator
+
+14. Herramienta Reflejar  
+Este comando permite reflejar el objeto seleccionado en el documento actual de Adobe Illustrator
+
+15. Guardar como EPS  
+Este comando permite guardar un archivo del Adobe Illustrator en formato EPS
+
+16. Guardar .ai  
 Este comando permite guardar un archivo de Adobe Illustrator en formato .ai
 
-7. Cerrar Illustrator  
+17. Cerrar Illustrator  
 Este comando permite cerrar el programa Adobe Illustrator  
 
 
