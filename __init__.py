@@ -107,6 +107,9 @@ if module == "open_autocad_file":
     global_scale_percent = int(GetParams("global_scale_percent")) if GetParams("global_scale_percent") else None
     unit_value = int(GetParams("unit_value")) if GetParams("unit_value") else 1
     unit = int(GetParams("unit")) if GetParams("unit") else 1
+    center_artwork = GetParams("center_artwork")
+    scale_lineweights = GetParams("scale_lineweights")
+    merge_layers = GetParams("merge_layers")
     result = GetParams("result")
 
     try:
@@ -118,7 +121,12 @@ if module == "open_autocad_file":
 
         
         autocad_options = mod_illustrator.Preferences.AutoCADFileOptions
-        autocad_options.CenterArtWork = True
+        if center_artwork:
+            autocad_options.CenterArtWork = True
+        if scale_lineweights:
+            autocad_options.ScaleLineWeights = True
+        if merge_layers:
+            autocad_options.MergeLayers = True
         autocad_options.GlobalScaleOption = scale_option
         if global_scale_percent:
             autocad_options.GlobalScalePercent = global_scale_percent
@@ -495,35 +503,29 @@ if module == "duplicate_artboard":
 
 if module == "reflect_tool":
     axis = GetParams("axis")
-    artboard_name = GetParams("artboard_name")
 
 
     try:
-        if not mod_illustrator:
-            raise Exception("Illustrator is not open")
-        if not artboard_name:
-            raise Exception("Artboard name is required")
 
-        if axis == "horizontal":
-            totalMatrix = mod_illustrator.GetScaleMatrix(-100, 100)
-        elif axis == "vertical":
-            totalMatrix = mod_illustrator.GetScaleMatrix(100, -100)
-
-        num_artboards = mod_illustrator.ActiveDocument.Artboards.Count
-        flag_ = False
-
-
-        for i in range(num_artboards):
-            artboard = mod_illustrator.ActiveDocument.Artboards.Item(i+1)
-            mod_illustrator.DoJavaScript("app.activeDocument.selectObjectsOnActiveArtboard();")
-
-            if artboard.Name == artboard_name:
-                for selection in mod_illustrator.ActiveDocument.Selection:
-                    selection.Transform(totalMatrix)
-                    flag_ = True
-                    break
-            if flag_:
-                break
+        mod_illustrator.DoJavaScript('''
+            function applyTM(tg, a, b, c, d) {
+                var tm = new Matrix();
+                tm.mValueA = a;
+                tm.mValueB = b;
+                tm.mValueC = c;
+                tm.mValueD = d;
+                tm.mValueTX = 0;
+                tm.mValueTY = 0;
+                tg.transform(tm, true, true, true, true, 1);
+                app.redraw();
+            }
+            if ("''' + axis + '''" == "horizontal") {
+                applyTM(app.activeDocument.selection[0], -1, 0, 0, 1);
+            }
+            else if ("''' + axis + '''" == "vertical") {
+                applyTM(app.activeDocument.selection[0], 1, 0, 0, -1);
+            }
+        ''')
 
     except Exception as e:
         traceback.print_exc()
@@ -532,7 +534,17 @@ if module == "reflect_tool":
 
 if module == "export_eps":
     file_path = GetParams("file_path")
-    artboards = GetParams("artboards")
+    save_multiple_artboards = "true" if GetParams("save_multiple_artboards") else "false" # done
+    artboard_range = GetParams("artboard_range") if GetParams("artboard_range") else "1" # done
+    cmyk_postscript = "true" if GetParams("cmyk_postscript") else "false" # done
+    compatibility = GetParams("compatibility") if GetParams("compatibility") else "Compatibility.ILLUSTRATOR16" # done
+    preview_format = GetParams("preview_format") if GetParams("preview_format") else "EPSPreview.COLORTIFF" # done
+    embed_all_fonts = "true" if GetParams("embed_all_fonts") else "false" # done
+    include_document_thumbnails = "true" if GetParams("include_document_thumbnails") else "false" # done
+    compatible_gradient_printing = "true" if GetParams("compatible_gradient_printing") else "false" # done
+    adobe_postscript_level = GetParams("adobe_postscript_level") if GetParams("adobe_postscript_level") else "PostScriptLevelEnum.LEVEL2"
+    embed_linked_files = "true" if GetParams("embed_linked_files") else "false" # done
+    result = GetParams("result")
 
     try:
         if not mod_illustrator:
@@ -546,14 +558,16 @@ if module == "export_eps":
                 var doc = app.activeDocument;
 
                 var saveOptions = new EPSSaveOptions();
-                saveOptions.saveMultipleArtboards = true;
-                saveOptions.artboardRange = "1-4";
-                saveOptions.cmykPostScript = true;
-                saveOptions.compatibility = Compatibility.ILLUSTRATOR14;
-                saveOptions.compatibleGradientPrinting = true;
-                saveOptions.embedAllFonts = false;
-                saveOptions.embedLinkedFiles = false;
-                saveOptions.includeDocumentThumbnails = false;
+                saveOptions.saveMultipleArtboards = ''' + save_multiple_artboards + ''';
+                saveOptions.artboardRange = "''' + artboard_range + '''";
+                saveOptions.cmykPostScript = ''' + cmyk_postscript + ''';
+                saveOptions.compatibility = ''' + compatibility + '''; //Compatibility.ILLUSTRATOR14
+                saveOptions.previewFormat = ''' + preview_format + '''; //EPSPreview.COLORTIFF
+                saveOptions.compatibleGradientPrinting = ''' + compatible_gradient_printing + ''';
+                saveOptions.embedAllFonts = ''' + embed_all_fonts + ''';
+                saveOptions.embedLinkedFiles = ''' + embed_linked_files + ''';
+                saveOptions.includeDocumentThumbnails = ''' + include_document_thumbnails + ''';
+                saveOptions.postScript = ''' + adobe_postscript_level + '''; //PostScriptLevelEnum.LEVEL2
 
                 doc.saveAs(newFile, saveOptions);
             
@@ -561,22 +575,10 @@ if module == "export_eps":
             '''
         )
 
-
-
-        # save_options = mod_illustrator.Preferences.EpsSaveOptions
-        # save_options.SaveMultipleArtboards = True
-        # save_options.ArtboardRange = "1-4"
-        # save_options.CmykPostScript = True
-        # save_options.Compatibility = mod_illustrator.Compatibility.ILLUSTRATOR14
-        # save_options.CompatibleGradientPrinting = True
-        # save_options.EmbedAllFonts = False
-        # save_options.EmbedLinkedFiles = False
-        # save_options.IncludeDocumentThumbnails = False
-
-
-        # mod_illustrator.ActiveDocument.SaveAs(file_path, save_options)
+        SetVar(result, True)
     
     except Exception as e:
+        SetVar(result, False)
         traceback.print_exc()
         PrintException()
         raise e
