@@ -22,6 +22,15 @@ This command allows you to open the Adobe Illustrator program
 |Program path|Adobe Illustrator.exe program path|C:/Program Files/Adobe/Adobe Illustrator CC 2019/Support Files/Contents/Windows/Illustrator.exe|
 |Assign result to variable|Name of the variable where True or False will be saved depending on whether the program opened correctly|variable|
 
+### Open .ai File
+  
+This command allows you to open a .ai file in Adobe Illustrator
+|Parameters|Description|example|
+| --- | --- | --- |
+|File path|Path of the file you want to open in Adobe Illustrator|C:/Users/User/Desktop/image.ai|
+|Document color mode|Select the color mode with which the document will be opened in Adobe Illustrator|RGB|
+|Assign result to variable|Name of the variable where True or False will be saved depending on whether the file was opened correctly|variable|
+
 ### Open AutoCAD File
   
 This command allows you to open an AutoCAD file in Adobe Illustrator

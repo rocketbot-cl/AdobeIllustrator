@@ -17,52 +17,55 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Abrir Illustrator  
 Este comando permite abrir o programa Adobe Illustrator
 
-2. Abrir arquivo AutoCAD  
+2. Abrir arquivo .ai  
+Este comando permite abrir um arquivo no formato .ai no Adobe Illustrator
+
+3. Abrir arquivo AutoCAD  
 Este comando permite abrir um arquivo AutoCAD no Adobe Illustrator
 
-3. Alterar o modo de cor do documento  
+4. Alterar o modo de cor do documento  
 Este comando permite alterar o modo de cor do documento atual do Adobe Illustrator
 
-4. Alterar cor CMYK da camada  
+5. Alterar cor CMYK da camada  
 Este comando permite alterar a cor CMYK da camada selecionada no documento atual do Adobe Illustrator
 
-5. Adicionar mesa de trabalho  
+6. Adicionar mesa de trabalho  
 Este comando permite adicionar uma mesa de trabalho ao documento atual do Adobe Illustrator
 
-6. Selecionar mesa de trabalho  
+7. Selecionar mesa de trabalho  
 Este comando permite selecionar uma mesa de trabalho do documento atual do Adobe Illustrator
 
-7. Duplicar mesa de trabalho  
+8. Duplicar mesa de trabalho  
 Este comando permite duplicar uma mesa de trabalho do documento atual do Adobe Illustrator
 
-8. Ajustar aos limites da ilustração  
+9. Ajustar aos limites da ilustração  
 Este comando permite ajustar o conteúdo da mesa de trabalho aos limites da ilustração selecionada. A camada de arte deve ser selecionada previamente.
 
-9. Excluir camada  
+10. Excluir camada  
 Este comando permite excluir uma camada do documento atual do Adobe Illustrator
 
-10. Selecione a camada  
+11. Selecione a camada  
 Este comando permite selecionar uma camada do documento atual do Adobe Illustrator
 
-11. Atribuir visibilidade da camada  
+12. Atribuir visibilidade da camada  
 Este comando permite atribuir a visibilidade de uma camada do documento atual do Adobe Illustrator
 
-12. Selecionar camada de arte  
+13. Selecionar camada de arte  
 Este comando permite selecionar a camada de arte do documento atual do Adobe Illustrator
 
-13. Executar script JS  
+14. Executar script JS  
 Este comando permite executar um script JavaScript no documento atual do Adobe Illustrator
 
-14. Ferramenta Refletir  
+15. Ferramenta Refletir  
 Este comando permite refletir o objeto selecionado no documento atual do Adobe Illustrator
 
-15. Salvar como EPS  
+16. Salvar como EPS  
 Este comando permite salvar um arquivo do Adobe Illustrator em formato EPS
 
-16. Salvar .ai  
+17. Salvar .ai  
 Este comando permite salvar um arquivo do Adobe Illustrator no formato .ai
 
-17. Fechar Illustrator  
+18. Fechar Illustrator  
 Este comando permite fechar o programa Adobe Illustrator  
 
 

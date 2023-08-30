@@ -101,6 +101,31 @@ if module == "open":
         PrintException()
         raise e
 
+if module == "open_ai_file":
+    file_path = GetParams("file_path")
+    color_mode = int(GetParams("color_mode")) if GetParams("color_mode") else "1"
+    result = GetParams("result")
+
+    try:
+        if not file_path:
+            raise Exception("File path is required")
+
+        if not mod_illustrator:
+            raise Exception("Illustrator is not open")
+
+        mod_illustrator.Open(File=file_path, DocumentColorSpace=color_mode)
+
+        SetVar(result, True)
+
+    except Exception as e:
+        SetVar(result, False)
+        traceback.print_exc()
+        PrintException()
+        raise e
+
+
+
+
 if module == "open_autocad_file":
     file_path = GetParams("file_path")
     scale_option = int(GetParams("scale_option")) if GetParams("scale_option") else 1
@@ -158,8 +183,6 @@ if module == "color_mode":
             mod_illustrator.ExecuteMenuCommand("doc-color-rgb")
         elif color_mode == "cmyk":
             mod_illustrator.ExecuteMenuCommand("doc-color-cmyk")
-        elif color_mode == "grayscale":
-            mod_illustrator.ExecuteMenuCommand("doc-color-grayscale")
         else:
             raise Exception("Invalid color mode")
 
@@ -296,6 +319,9 @@ if module == "change_layer_color_cmyk":
     try:
         if not mod_illustrator:
             raise Exception("Illustrator is not open")
+
+        if not mod_layer:
+            raise Exception("Layer is not selected. Please use 'Select Layer' command first")
 
         mod_illustrator.DoJavaScript(
             '''

@@ -17,52 +17,55 @@ To install the module in Rocketbot Studio, it can be done in two ways:
 1. Open Illustrator  
 This command allows you to open the Adobe Illustrator program
 
-2. Open AutoCAD File  
+2. Open .ai File  
+This command allows you to open a .ai file in Adobe Illustrator
+
+3. Open AutoCAD File  
 This command allows you to open an AutoCAD file in Adobe Illustrator
 
-3. Change document color mode  
+4. Change document color mode  
 This command allows you to change the color mode of the current Adobe Illustrator document
 
-4. Change CMYK color of layer  
+5. Change CMYK color of layer  
 This command allows you to change the CMYK color of the selected layer in the current Adobe Illustrator document
 
-5. Add artboard  
+6. Add artboard  
 This command allows you to add an artboard to the current Adobe Illustrator document
 
-6. Select artboard  
+7. Select artboard  
 This command allows you to select an artboard from the current Adobe Illustrator document
 
-7. Duplicate artboard  
+8. Duplicate artboard  
 This command allows you to duplicate an artboard from the current Adobe Illustrator document
 
-8. Fit to illustration boundaries  
+9. Fit to illustration boundaries  
 This command allows you to fit the content of the artboard to the boundaries of the selected illustration. The art layer must be selected previously.
 
-9. Delete layer  
+10. Delete layer  
 This command allows you to delete a layer from the current Adobe Illustrator document
 
-10. Select layer  
+11. Select layer  
 This command allows you to select a layer from the current Adobe Illustrator document
 
-11. Assign layer visibility  
+12. Assign layer visibility  
 This command allows you to assign the visibility of a layer of the current Adobe Illustrator document
 
-12. Select art layer  
+13. Select art layer  
 This command allows you to select the art layer from the current Adobe Illustrator document
 
-13. Execute JS Script  
+14. Execute JS Script  
 This command allows you to execute a JavaScript script in the current Adobe Illustrator document
 
-14. Reflect tool  
+15. Reflect tool  
 This command allows you to reflect the selected object in the current Adobe Illustrator document
 
-15. Save as EPS  
+16. Save as EPS  
 This command allows you to save an Adobe Illustrator file in EPS format
 
-16. Save .ai  
+17. Save .ai  
 This command allows you to save an Adobe Illustrator file in .ai format
 
-17. Close Illustrator  
+18. Close Illustrator  
 This command allows you to close the Adobe Illustrator program  
 
 
